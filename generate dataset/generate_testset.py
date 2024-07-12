@@ -2,8 +2,8 @@ import os
 import numpy as np
 import cv2
 
-test_path = "C:\\Users\\yimin\\OneDrive\\Documents\\Coding Projects\\Chess Recognition\\test_chessboards"
-transformed_path = "C:\\Users\\yimin\\OneDrive\\Documents\\Coding Projects\\Chess Recognition\\test_chessboards_transformed"
+test_path = "data\\test_chessboards"
+transformed_path = "data\\test_chessboards_transformed"
 board_to_corner_coordinates = {
     "test_1.jpg": [[58,55],[1735,61],[1730,1728],[67,1731]],
     "test_2.jpg": [[438,101],[1273,123],[1286,1649],[385,1647]],

@@ -2,7 +2,7 @@
 import os
 
 
-folder_path = "C:\\Users\\yimin\\OneDrive\\Documents\\Coding Projects\\Chess Recognition\\chess_pieces\\train"
+folder_path = "data\\chess_pieces\\train"
 
 
 number_to_piece = {
@@ -22,14 +22,7 @@ number_to_piece = {
 }
 
 
-#for filename in os.listdir(folder_path):
-#
-#    for img in os.listdir(os.path.join(folder_path, filename)):
-#        if img[:11] != "chess_board" and (img[-6:-4] != "A1" and img[-6:-4] != "A2"):
-#            print(img)
-#            os.remove(os.path.join(folder_path, filename, img))
-
-#pawns
+# remove pawns
 
 for filename in os.listdir(folder_path):
     if (filename[-4:] != "pawn"):
@@ -40,7 +33,7 @@ for filename in os.listdir(folder_path):
             print(img)
             os.remove(os.path.join(folder_path,filename,img))
 
-#empty
+# remove empty pawns
 
 for filename in os.listdir(folder_path):
     if (filename != "empty"):
