@@ -11,10 +11,7 @@ board_to_corner_coordinates = {
     "test_4.jpg" : [[479,241],[1318,251],[1328,1359],[478,1352]],
     "test_5.jpg": [[124,109],[1648,112],[1659,1552],[135,1560]],
     "test_6.jpg": [[375,171],[1226,151],[1253,1673],[367,1703]],
-    "test_7_bl.jpg": [[562,306],[1228,296],[1237,1479],[568,1478]],
-    "test_7_br.jpg": [[521,288],[1203,281],[1206,1489],[529,1494]],
-    "test_7_tl.jpg": [[332,300],[1130,323],[1144,1722],[318,1749]],
-    "test_7_tr.jpg": [[552,342],[1244,332],[1254,1578],[555,1590]],
+    
 }
 
 def warp(img,coordinates):
@@ -41,11 +38,3 @@ for filename in os.listdir(transformed_path):
     
     cv2.imwrite(os.path.join(transformed_path,filename),warped_img)
 
-
-tl = cv2.imread(os.path.join(transformed_path,"test_7_tl.jpg"))
-tr = cv2.imread(os.path.join(transformed_path,"test_7_tr.jpg"))
-bl = cv2.imread(os.path.join(transformed_path,"test_7_bl.jpg"))
-br = cv2.imread(os.path.join(transformed_path,"test_7_br.jpg"))
-combined_img = np.concatenate((np.concatenate((tl,tr),axis=1),np.concatenate((bl,br),axis=1)),axis=0)
-combined_img = cv2.resize(combined_img,(1792,1792))
-cv2.imwrite(os.path.join(transformed_path,"test_7_combined.jpg"),combined_img)

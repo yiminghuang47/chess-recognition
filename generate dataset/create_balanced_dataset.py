@@ -1,8 +1,7 @@
 
 import os
 
-
-folder_path = "data\\chess_pieces\\train"
+dest_path = "data\\balanced_chess_pieces\\train"
 
 
 number_to_piece = {
@@ -24,22 +23,22 @@ number_to_piece = {
 
 # remove pawns
 
-for filename in os.listdir(folder_path):
+for filename in os.listdir(dest_path):
     if (filename[-4:] != "pawn"):
         continue
     print(filename)
-    for img in os.listdir(os.path.join(folder_path, filename)):
+    for img in os.listdir(os.path.join(dest_path, filename)):
         if img[:11] == "chess_board" and (img[-5] != "0" and img[-5] != "1"):
             print(img)
-            os.remove(os.path.join(folder_path,filename,img))
+            os.remove(os.path.join(dest_path,filename,img))
 
 # remove empty pawns
 
-for filename in os.listdir(folder_path):
+for filename in os.listdir(dest_path):
     if (filename != "empty"):
         continue
     print(filename)
-    for img in os.listdir(os.path.join(folder_path, filename)):
+    for img in os.listdir(os.path.join(dest_path, filename)):
         if img[:11] == "chess_board" and (img[-7:-4] != "2_0" and img[-7:-4] != "2_1"):
             print(img)
-            os.remove(os.path.join(folder_path,filename,img))
+            os.remove(os.path.join(dest_path,filename,img))
